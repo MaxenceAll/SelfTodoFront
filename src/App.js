@@ -3,8 +3,7 @@ import ListItem from "./components/ListItem";
 import { useEffect, useState } from "react";
 
 function App() {
-  const [tasks, setTasks] = useState(null);
-
+  const [tasks, setTasks] = useState(null); 
   async function getData() {
     const userEmail = "maxence.allart@gmail.com";
     try {
