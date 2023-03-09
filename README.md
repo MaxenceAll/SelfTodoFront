@@ -1,2 +1,1 @@
-https://www.youtube.com/watch?v=LYEkguL9PcY&ab_channel=CodewithAniaKub%C3%B3w
-
+Self made todo here is the front in react
