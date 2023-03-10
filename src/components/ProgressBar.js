@@ -1,11 +1,20 @@
+function ProgressBar({progress}) {
+  return (
+    <div className="outer-bar">
 
-function ProgressBar() {
-    return (
-      <div>
-       [   ]
+      <div 
+      className="inner-bar"
+      style={ 
+        {
+          width: `${progress}%`,
+          backgroundColor: 'red'
+        }
+      }
+      >
+
       </div>
-    )
-  }
-  
-  export default ProgressBar;
-  
+    </div>
+  );
+}
+
+export default ProgressBar;

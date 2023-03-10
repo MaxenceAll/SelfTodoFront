@@ -1,12 +1,16 @@
 import { useState } from "react";
 import Modal from "./Modal";
+import { useCookies } from "react-cookie";
 
 function ListHeader({ listName , getData}) {
 
   const [showModal, setShowModal] = useState(null);
+  const [cookies, setCookie, removeCookie] = useCookies(null);
 
   function signOut() {
-    alert("Clicked Sign out !");
+    removeCookie('Email');
+    removeCookie('AuthToken')
+    window.location.reload();
   }
 
 
@@ -15,7 +19,6 @@ function ListHeader({ listName , getData}) {
       <h1>{listName}</h1>
       <div className="button-container">
         <button className="create" onClick={()=>setShowModal(true)}>Add New</button>
-
         <button className="signout" onClick={signOut}>
           Sign out
         </button>

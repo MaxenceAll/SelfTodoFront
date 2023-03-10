@@ -1,12 +1,15 @@
 import { useState } from "react";
+import { useCookies } from "react-cookie";
 
 function Modal({ mode, setShowModal, task, getData }) {
 
+
+  const [cookies, setCookie, removeCookie] = useCookies(null);
   
   const editMode = mode === "edit" ? true : false;
   
   const [data, setData] = useState({
-    user_email: editMode ? task.user_email : "maxence.allart@gmail.com",
+    user_email: editMode ? task.user_email : cookies.Email,
     title: editMode ? task.title : "",
     progress: editMode ? task.progress : 50,
     date: editMode ? task.date : new Date(),
@@ -92,7 +95,7 @@ function Modal({ mode, setShowModal, task, getData }) {
             min="0"
             max="100"
             name="progress"
-            value={data.range}
+            value={data.progress}
             onChange={handleChange}
             id="range"
           ></input>
